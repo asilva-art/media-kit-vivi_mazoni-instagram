@@ -341,6 +341,35 @@
       position: relative;
       padding: 8px 20px;
     }
+    .brand-manifesto {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: #141413;
+      border-left: 3px solid var(--gold);
+      padding: 16px 16px;
+    }
+    .brand-manifesto p {
+      margin: 0;
+      max-width: 72ch;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .principles {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .principle {
+      border: 1px solid var(--line);
+      background: #141413;
+      color: var(--text-soft);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 10px;
+      text-align: center;
+    }
     .quote-wide::before,
     .quote-wide::after {
       content: '"';
@@ -390,6 +419,27 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
       margin-top: 10px;
+    }
+    .inline-data {
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      background: #131312;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .inline-data div {
+      color: var(--text-soft);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .inline-data strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--gold-light);
+      font-size: 13px;
+      margin-bottom: 2px;
     }
 
     .footnote {
@@ -453,6 +503,26 @@
       color: var(--text);
       font-size: 12px;
       line-height: 1.6;
+    }
+    .city-list {
+      margin-top: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      display: grid;
+      gap: 6px;
+    }
+    .city-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+    .city-row b {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--gold-light);
+      font-weight: 700;
+      letter-spacing: .2px;
     }
 
     .hub-wrap {
@@ -903,6 +973,10 @@
       .pricing-grid {
         grid-template-columns: 1fr;
       }
+      .principles,
+      .inline-data {
+        grid-template-columns: 1fr;
+      }
 
       .hero { min-height: auto; padding-top: 40px; }
       .hero-left, .hero-right { padding: 24px; }
@@ -1001,7 +1075,16 @@
       <p class="section-tag">02 — Defesa Institucional da Marca</p>
       <h2>Por que Viviane Mazoni</h2>
       <p class="subtitle-italic">e a Escolha Certa</p>
-      <p class="prose">A marca Viviane Mazoni representa a consolidacao de uma trajetoria profissional construida ao longo de 14 anos de atuacao direta no mercado de arquitetura e design de interiores, com presenca digital continua desde 2012. O que sustenta sua reputacao nao e alcance; e a combinacao entre competencia profissional, autenticidade pessoal e conexao genuina com pessoas.</p>
+      <p class="prose">A marca Viviane Mazoni nao se sustenta apenas por presenca digital ou portfolio tecnico. Ela se sustenta por reputacao: uma construcao de longo prazo baseada em consistencia de posicionamento, valores claros e conexao real com seu publico.</p>
+      <div class="brand-manifesto">
+        <p>Viviane e percebida como uma profissional de alta performance que equilibra papeis com autenticidade: arquiteta, empresaria, mae e lider de equipe. Essa combinacao gera algo raro no mercado: confianca transferivel. Quando Viviane recomenda, o publico interpreta como criterio tecnico, nao como publicidade ocasional.</p>
+      </div>
+      <div class="principles">
+        <div class="principle">Dedicacao</div>
+        <div class="principle">Disciplina</div>
+        <div class="principle">Respeito as Pessoas</div>
+        <div class="principle">Relacoes Duradouras</div>
+      </div>
       <div class="pilares">
         <article class="card">
           <h3 class="pilar-title">Pilar 01 — Autoridade Tecnica</h3>
@@ -1042,6 +1125,10 @@
         <article class="card"><div class="num">15.712</div><div class="num-label">Curtidas</div></article>
         <article class="card"><div class="num">1.001</div><div class="num-label">Comentarios</div></article>
         <article class="card"><div class="num">1.036</div><div class="num-label">Compartilhamentos</div></article>
+      </div>
+      <div class="inline-data">
+        <div><strong>1.118.838</strong>visualizacoes de posts no periodo.</div>
+        <div><strong>339.547</strong>visualizacoes de reels no periodo.</div>
       </div>
 
       <p class="footnote">Dados extraidos do relatorio oficial de desempenho do perfil @viviane_mazoni e de analise publica do perfil · Marco 2026.</p>
@@ -1092,6 +1179,14 @@
           <div class="gold-divider" style="margin:10px 0 12px"></div>
           <p style="margin-bottom:6px">~40% distribuidos em outros mercados:</p>
           <p style="font-size:12px">Sao Paulo · Rio de Janeiro · Goiania · Outras capitais</p>
+          <div class="city-list">
+            <div class="city-row"><span>Belo Horizonte</span><b>8.113</b></div>
+            <div class="city-row"><span>Sao Paulo</span><b>3.986</b></div>
+            <div class="city-row"><span>Rio de Janeiro</span><b>1.478</b></div>
+            <div class="city-row"><span>Nova Lima</span><b>1.046</b></div>
+            <div class="city-row"><span>Contagem</span><b>928</b></div>
+            <div class="city-row"><span>Goiania</span><b>689</b></div>
+          </div>
           <div class="insight">Forte presenca no eixo Sudeste, maior mercado consumidor de arquitetura de alto padrao no Brasil.</div>
         </article>
       </div>
