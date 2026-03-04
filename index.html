@@ -7,7 +7,7 @@
   <title>Media Kit 2026 | Viviane Mazoni x Baracho Pedras</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0A0A0A;
@@ -17,8 +17,8 @@
       --gold: #C9A84C;
       --gold-light: #E8D5A3;
       --gold-deep: #8B6914;
-      --text: #F5F0E8;
-      --text-soft: #9A9A8A;
+      --text: #E0E0E0;
+      --text-soft: #A7A79A;
       --text-muted: #555545;
       --olive: #6C6A43;
       --bronze: #7A5933;
@@ -29,7 +29,7 @@
 
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
-    body { font-family: 'Josefin Sans', sans-serif; line-height: 1.75; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
     a { color: inherit; }
 
     .topbar {
@@ -51,15 +51,34 @@
     }
     .brand {
       color: var(--gold);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
     .kit {
       color: var(--text-muted);
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
+    }
+    .jump-nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .jump-nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      padding: 5px 8px;
+      transition: color .25s ease, border-color .25s ease;
+    }
+    .jump-nav a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold);
     }
 
     .page { max-width: var(--max); margin: 0 auto; padding: 0 20px 100px; }
@@ -90,19 +109,21 @@
     }
 
     section {
-      padding: 84px 0;
+      padding: 132px 0;
       border-bottom: 1px solid #141414;
     }
 
     h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      line-height: 1.1;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.08;
       margin: 0 0 20px;
+      letter-spacing: -0.01em;
     }
 
-    h2 { font-size: clamp(34px, 5vw, 48px); }
-    p { margin: 0 0 14px; color: var(--text-soft); font-size: 14px; }
+    h2 { font-size: clamp(36px, 5vw, 56px); }
+    p { margin: 0 0 16px; color: var(--text-soft); font-size: 15px; line-height: 1.7; }
+    .prose { max-width: 760px; }
 
     .hero {
       min-height: 100vh;
@@ -131,7 +152,8 @@
     }
 
     .hero-title {
-      font-size: clamp(56px, 10vw, 88px);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 10vw, 92px);
       line-height: 0.92;
       margin-bottom: 16px;
     }
@@ -157,7 +179,7 @@
     }
 
     .handle {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 22px;
       color: var(--gold-light);
@@ -165,10 +187,10 @@
     }
 
     .tagline {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--text-soft);
-      font-size: 20px;
+      font-size: 21px;
       margin-bottom: 32px;
     }
 
@@ -194,7 +216,7 @@
       position: absolute;
       right: 16px;
       bottom: -28px;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 220px;
       line-height: 0.8;
       color: rgba(232, 213, 163, 0.04);
@@ -208,7 +230,7 @@
     }
     .metric:first-child { border-top: 0; padding-top: 0; }
     .metric-value {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--gold-light);
       font-size: 42px;
@@ -230,7 +252,8 @@
     }
 
     .card {
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
@@ -283,14 +306,14 @@
       border-left: 3px solid var(--gold);
       background: rgba(201, 168, 76, 0.08);
       color: var(--gold-light);
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 22px;
       line-height: 1.3;
     }
 
     .subtitle-italic {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--gold-light);
       font-size: clamp(28px, 4vw, 36px);
@@ -314,7 +337,7 @@
     .quote-wide {
       margin-top: 26px;
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--gold-light);
       font-size: clamp(24px, 4vw, 34px);
@@ -339,7 +362,7 @@
     }
 
     .num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--gold-light);
       font-size: clamp(34px, 5vw, 48px);
@@ -397,6 +420,29 @@
     }
 
     .bar-wrap { margin-bottom: 12px; }
+    .ring-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: conic-gradient(var(--gold) 0 61.63%, #4f4f46 61.63% 86.57%, #222 86.57% 100%);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .ring::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      background: #111;
+      border: 1px solid #2b2b2b;
+    }
     .bar-label {
       font-size: 10px;
       letter-spacing: 2px;
@@ -418,7 +464,7 @@
     .bar-fill.muted { background: #575747; }
 
     .geo-big {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--gold-light);
       font-size: 54px;
@@ -570,7 +616,7 @@
     }
     .inf-card h4 {
       margin: 0 0 8px;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: var(--text);
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -589,7 +635,7 @@
     }
 
     .biz-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 34px;
       margin: 0 0 8px;
       color: var(--text);
@@ -654,7 +700,7 @@
       gap: 10px;
     }
     .qty-num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 34px;
       color: var(--gold-light);
@@ -697,36 +743,72 @@
       line-height: 1.65;
     }
 
-    .table-wrap {
-      margin-top: 16px;
-      overflow-x: auto;
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .pricing-card {
       border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding: 22px;
+      position: relative;
     }
-
-    table {
-      width: 100%;
-      min-width: 760px;
-      border-collapse: collapse;
-      background: var(--bg-soft);
+    .pricing-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: var(--gold);
     }
-    th, td {
-      border-bottom: 1px solid var(--line);
-      padding: 12px 12px;
-      text-align: left;
-      vertical-align: top;
-      color: var(--text-soft);
+    .pricing-plan {
+      color: var(--text);
       font-size: 13px;
-      line-height: 1.55;
-    }
-    th {
-      background: rgba(201, 168, 76, 0.14);
-      color: var(--gold-light);
-      font-size: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 600;
     }
-    td strong { color: var(--text); }
-    .money { color: var(--gold-light); white-space: nowrap; }
+    .pricing-copy {
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      max-width: 46ch;
+    }
+    .pricing-value {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 34px;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .service-list {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      background: #121212;
+    }
+    .service-row {
+      display: grid;
+      grid-template-columns: 1.6fr auto 1.2fr;
+      gap: 14px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+    .service-row:last-child { border-bottom: 0; }
+    .service-name { color: var(--text); font-size: 13px; }
+    .service-value {
+      color: var(--gold-light);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .service-note { color: var(--text-soft); font-size: 12px; }
 
     .govern-grid {
       display: grid;
@@ -769,7 +851,7 @@
     }
 
     .quote-mark {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 120px;
       line-height: 0.5;
       color: rgba(201, 168, 76, 0.12);
@@ -777,7 +859,7 @@
     }
 
     .finale-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: clamp(28px, 4vw, 40px);
       line-height: 1.2;
@@ -801,11 +883,21 @@
     }
 
     .finale-contact {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 22px;
       color: var(--gold-light);
       line-height: 1.4;
       margin-bottom: 18px;
+    }
+    .visual-break {
+      height: 180px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(80% 120% at 10% 20%, rgba(201, 168, 76, 0.16), transparent 60%),
+        radial-gradient(80% 120% at 90% 80%, rgba(201, 168, 76, 0.12), transparent 60%),
+        #101010;
+      background-attachment: fixed;
+      margin: 24px 0;
     }
 
     .finale-note {
@@ -844,7 +936,8 @@
       .delivery-grid,
       .qty-grid,
       .govern-grid,
-      .kpi-grid {
+      .kpi-grid,
+      .pricing-grid {
         grid-template-columns: 1fr;
       }
 
@@ -854,8 +947,13 @@
       .meta-row { grid-template-columns: 1fr; gap: 6px; }
       .hub-diagram { display: none; }
       .hub-mobile { display: block; }
+      .jump-nav { display: none; }
+      .service-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
 
-      section { padding: 72px 0; }
+      section { padding: 100px 0; }
     }
 
     @media (max-width: 480px) {
@@ -870,6 +968,12 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">VM + Arquitetos</div>
+      <nav class="jump-nav" aria-label="Navegacao por secoes">
+        <a href="#s01">01</a>
+        <a href="#s03">03</a>
+        <a href="#s04">04</a>
+        <a href="#s09">09</a>
+      </nav>
       <div class="kit">Media Kit 2026</div>
     </div>
   </header>
@@ -907,11 +1011,11 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s01">
       <p class="section-tag">01 — Posicionamento Institucional</p>
       <h2>Uma Parceria de Ativos Estrategicos Complementares</h2>
       <div class="split">
-        <div>
+        <div class="prose">
           <p>Recebo com honra o convite da Baracho Pedras para integrar o ciclo 2026. Esta proposta parte de um principio inequivoco: nao se trata apenas de midia; trata-se de reputacao, confianca e influencia real sobre decisao de compra.</p>
           <p>A Baracho aporta excelencia tecnica e curadoria de alto rigor. Viviane Mazoni aporta autoridade de mercado, linguagem de execucao real e capacidade de converter narrativa em validacao de marca.</p>
           <p>O projeto, portanto, e uma alianca de ativos complementares em nivel estrategico, com foco em resultado mensuravel e equivalencia de valor entre as duas marcas.</p>
@@ -930,11 +1034,11 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s02">
       <p class="section-tag">02 — Defesa Institucional da Marca</p>
       <h2>Por que Viviane Mazoni</h2>
       <p class="subtitle-italic">e a Escolha Certa</p>
-      <p>A marca Viviane Mazoni representa a consolidacao de uma trajetoria profissional construida ao longo de 14 anos de atuacao direta no mercado de arquitetura e design de interiores, com presenca digital continua desde 2012. O que sustenta sua reputacao nao e alcance; e a combinacao entre competencia profissional, autenticidade pessoal e conexao genuina com pessoas.</p>
+      <p class="prose">A marca Viviane Mazoni representa a consolidacao de uma trajetoria profissional construida ao longo de 14 anos de atuacao direta no mercado de arquitetura e design de interiores, com presenca digital continua desde 2012. O que sustenta sua reputacao nao e alcance; e a combinacao entre competencia profissional, autenticidade pessoal e conexao genuina com pessoas.</p>
       <div class="pilares">
         <article class="card">
           <h3 class="pilar-title">Pilar 01 — Autoridade Tecnica</h3>
@@ -952,11 +1056,12 @@
       <p class="quote-wide">A comunicacao convence, mas o exemplo arrasta. Viviane lidera pelo exemplo e toda uma rede profissional orbita ao seu redor.</p>
     </section>
     <div class="gold-divider"></div>
+    <div class="visual-break animate-on-scroll" aria-hidden="true"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s03">
       <p class="section-tag">03 — Presenca Digital · Dados Objetivos</p>
       <h2>Numeros que Validam Autoridade</h2>
-      <p>A presenca digital de Viviane Mazoni foi construida ao longo de mais de uma decada, de forma organica e consistente. Os indicadores abaixo refletem alcance, engajamento e confianca.</p>
+      <p class="prose">A presenca digital de Viviane Mazoni foi construida ao longo de mais de uma decada, de forma organica e consistente. Os indicadores abaixo refletem alcance, engajamento e confianca.</p>
 
       <div class="metrics-grid-4">
         <article class="card"><div class="num">73,3 mil</div><div class="num-label">Seguidores Totais</div><div class="num-sub">Audiencia organica qualificada</div></article>
@@ -965,7 +1070,7 @@
         <article class="card"><div class="num">70.188</div><div class="num-label">Visitas ao Perfil</div><div class="num-sub">+123,65% vs. periodo anterior</div></article>
       </div>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:28px;">Analise de Conteudo (amostra publica — 2.601 posts)</h3>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:28px;">Analise de Conteudo (amostra publica — 2.601 posts)</h3>
       <div class="metrics-grid-3">
         <article class="card"><div class="num">155,2</div><div class="num-label">Interacoes Medias / Post</div><div class="num-sub">Mediana de 78 por publicacao</div></article>
         <article class="card"><div class="num">18.797</div><div class="num-label">Views Medias por Post</div><div class="num-sub">Pico: 124.562 views em publicacao unica</div></article>
@@ -982,14 +1087,18 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s04">
       <p class="section-tag">04 — Perfil da Audiencia</p>
       <h2>Quem Acompanha e Consome</h2>
-      <p>A audiencia de Viviane Mazoni tem alta aderencia ao publico decisor do mercado imobiliario e de alto padrao. E uma base ativa de adultos em fase de aquisicao, reforma e investimento patrimonial.</p>
+      <p class="prose">A audiencia de Viviane Mazoni tem alta aderencia ao publico decisor do mercado imobiliario e de alto padrao. E uma base ativa de adultos em fase de aquisicao, reforma e investimento patrimonial.</p>
 
       <div class="audiencia-grid">
         <article class="card">
           <h3 class="mini-title">Distribuicao por Genero</h3>
+          <div class="ring-row">
+            <div class="ring" aria-hidden="true"></div>
+            <p style="margin:0;font-size:12px;color:var(--text-soft);">Componente visual de distribuicao para leitura rapida do perfil de genero.</p>
+          </div>
           <div class="bar-wrap">
             <div class="bar-label">61,63% · Feminino</div>
             <div class="bar-track"><div class="bar-fill" style="width:61.63%"></div></div>
@@ -1032,10 +1141,10 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s05">
       <p class="section-tag">05 — Hub de Influencia de Mercado</p>
       <h2>Por que Viviane e um Hub de Influencia</h2>
-      <p>Diferentes publicos, com diferentes necessidades, encontram em Viviane Mazoni uma referencia comum. Esse posicionamento e o que grandes marcas buscam em uma porta-voz: autoridade, confianca e alcance em multiplas camadas.</p>
+      <p class="prose">Diferentes publicos, com diferentes necessidades, encontram em Viviane Mazoni uma referencia comum. Esse posicionamento e o que grandes marcas buscam em uma porta-voz: autoridade, confianca e alcance em multiplas camadas.</p>
 
       <div class="hub-wrap">
         <div class="hub-diagram animate-on-scroll" id="hub-diagram">
@@ -1090,10 +1199,10 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s06">
       <p class="section-tag">06 — Estrutura Empresarial</p>
       <h2>Duas Frentes. Uma Visao.</h2>
-      <p>A atuacao de Viviane Mazoni esta estruturada em dois negocios complementares. Essa combinacao de execucao e formacao cria um posicionamento raro no mercado.</p>
+      <p class="prose">A atuacao de Viviane Mazoni esta estruturada em dois negocios complementares. Essa combinacao de execucao e formacao cria um posicionamento raro no mercado.</p>
 
       <div class="duo-grid">
         <article class="card">
@@ -1125,10 +1234,10 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s07">
       <p class="section-tag">07 — Conexao Viviane x Baracho Pedras</p>
       <h2>Uma Relacao Ja Existente e Comprovada</h2>
-      <p>Antes de qualquer proposta formal, os dados ja narram uma historia de proximidade organica entre Viviane e Baracho Pedras. E uma conexao real, historica e consistente no perfil.</p>
+      <p class="prose">Antes de qualquer proposta formal, os dados ja narram uma historia de proximidade organica entre Viviane e Baracho Pedras. E uma conexao real, historica e consistente no perfil.</p>
 
       <div class="metrics-grid-3">
         <article class="card"><div class="num">18</div><div class="num-label">Publicacoes com Vinculo Baracho</div><div class="num-sub">Mencoes, marcacoes ou coautorias no perfil oficial</div></article>
@@ -1136,16 +1245,16 @@
         <article class="card"><div class="num">3</div><div class="num-label">Top Posts de Maior Engajamento</div><div class="num-sub">Conteudos colaborativos com maior interacao do perfil</div></article>
       </div>
 
-      <p>Alem do digital, Viviane opera com forte legitimidade territorial na RMBH, com efeito reputacional comprovado em marcas, empreendimentos e fornecedores. Sua presenca funciona como acelerador de credibilidade junto a publicos de alto padrao.</p>
+      <p class="prose">Alem do digital, Viviane opera com forte legitimidade territorial na RMBH, com efeito reputacional comprovado em marcas, empreendimentos e fornecedores. Sua presenca funciona como acelerador de credibilidade junto a publicos de alto padrao.</p>
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s08">
       <p class="section-tag">08 — Arquitetura de Entrega 2026</p>
       <h2>O Que Esta na Mesa para 2026</h2>
-      <p>A proposta esta estruturada em dois eixos complementares: um nucleo mensal de relacionamento e direcao estrategica (retainer), e um menu de ativacoes contrataveis conforme necessidade e calendario da Baracho.</p>
+      <p class="prose">A proposta esta estruturada em dois eixos complementares: um nucleo mensal de relacionamento e direcao estrategica (retainer), e um menu de ativacoes contrataveis conforme necessidade e calendario da Baracho.</p>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">4.1 · Nucleo Mensal</h3>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">4.1 · Nucleo Mensal</h3>
       <div class="delivery-grid">
         <div class="delivery-item">Planejamento editorial mensal + reuniao estrategica.</div>
         <div class="delivery-item">Direcao narrativa tecnica e emocional por campanha.</div>
@@ -1153,7 +1262,7 @@
         <div class="delivery-item">Monitoramento de KPIs e ajustes de pauta mensais.</div>
       </div>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:24px;">4.2 · Entregaveis Anuais Recomendados</h3>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:24px;">4.2 · Entregaveis Anuais Recomendados</h3>
       <div class="qty-grid">
         <div class="qty"><div class="qty-num">4</div><div class="qty-txt">Masterclasses anuais</div></div>
         <div class="qty"><div class="qty-num">2</div><div class="qty-txt">Blockbusters semestrais</div></div>
@@ -1163,7 +1272,7 @@
         <div class="qty"><div class="qty-num">6</div><div class="qty-txt">Conteudos de objecao tecnica (FAQ premium)</div></div>
       </div>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:24px;">3 · Resposta a Requisicao Tecnica</h3>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:24px;">3 · Resposta a Requisicao Tecnica</h3>
       <div class="response-cards">
         <article class="response"><div class="response-key">Polo Tecnico</div><p>Conteudo de especificacao, desempenho, manutencao, seguranca e tomada de decisao, traduzido na linguagem real do arquiteto.</p></article>
         <article class="response"><div class="response-key">Polo Humano</div><p>Narrativa de uso real da pedra como palco de memoria, convivencia e pertencimento, gerando desejo e identificacao.</p></article>
@@ -1174,56 +1283,34 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s09">
       <p class="section-tag">09 — Modelo Comercial e Investimento</p>
       <h2>Uma Proposta de Alto Padrao para uma Parceria de Alto Padrao</h2>
-      <p>Os valores foram estruturados com base em parametros de mercado para influenciadores de nicho premium no Brasil, considerando audiencia, autoridade tecnica e impacto de marca.</p>
+      <p class="prose">Os valores foram estruturados com base em parametros de mercado para influenciadores de nicho premium no Brasil, considerando audiencia, autoridade tecnica e impacto de marca.</p>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">Retainer Mensal</h3>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Plano</th>
-              <th>Escopo</th>
-              <th>Investimento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Embaixadora Core</strong></td>
-              <td>Gestao estrategica mensal + presenca recorrente + pauta e KPI.</td>
-              <td class="money">R$ 22.000 / mes</td>
-            </tr>
-            <tr>
-              <td><strong>Embaixadora Signature</strong></td>
-              <td>Core + maior prioridade de agenda + suporte ampliado em ativacoes.</td>
-              <td class="money">R$ 32.000 / mes</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">Retainer Mensal</h3>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="pricing-plan">Embaixadora Core</div>
+          <div class="pricing-copy">Gestao estrategica mensal + presenca recorrente + pauta e KPI.</div>
+          <div class="pricing-value">R$ 22.000 / mes</div>
+        </article>
+        <article class="pricing-card">
+          <div class="pricing-plan">Embaixadora Signature</div>
+          <div class="pricing-copy">Core + maior prioridade de agenda + suporte ampliado em ativacoes.</div>
+          <div class="pricing-value">R$ 32.000 / mes</div>
+        </article>
       </div>
 
-      <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:22px;">Entregas Avulsas</h3>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Entrega</th>
-              <th>Faixa Sugerida</th>
-              <th>Observacao</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Reel colaborativo</strong></td><td class="money">R$ 10.000 – R$ 16.000</td><td>Com roteiro e publicacao</td></tr>
-            <tr><td><strong>Feed/carrossel colaborativo</strong></td><td class="money">R$ 7.000 – R$ 12.000</td><td>Com copy e direcao criativa</td></tr>
-            <tr><td><strong>Stories (8 a 12 frames)</strong></td><td class="money">R$ 3.000 – R$ 5.000</td><td>Com CTA definido</td></tr>
-            <tr><td><strong>Captacao presencial (meio)</strong></td><td class="money">R$ 8.000 – R$ 12.000</td><td>Showroom/obra/evento</td></tr>
-            <tr><td><strong>Captacao presencial (diaria)</strong></td><td class="money">R$ 12.000 – R$ 20.000</td><td>Agenda exclusiva</td></tr>
-            <tr><td><strong>Masterclass</strong></td><td class="money">R$ 18.000 – R$ 28.000</td><td>Participacao + ativacao digital</td></tr>
-            <tr><td><strong>Blockbuster</strong></td><td class="money">R$ 28.000 – R$ 45.000</td><td>Formato especial semestral</td></tr>
-          </tbody>
-        </table>
+      <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:22px;">Entregas Avulsas</h3>
+      <div class="service-list">
+        <div class="service-row"><div class="service-name">Reel colaborativo</div><div class="service-value">R$ 10.000 – R$ 16.000</div><div class="service-note">Com roteiro e publicacao</div></div>
+        <div class="service-row"><div class="service-name">Feed/carrossel colaborativo</div><div class="service-value">R$ 7.000 – R$ 12.000</div><div class="service-note">Com copy e direcao criativa</div></div>
+        <div class="service-row"><div class="service-name">Stories (8 a 12 frames)</div><div class="service-value">R$ 3.000 – R$ 5.000</div><div class="service-note">Com CTA definido</div></div>
+        <div class="service-row"><div class="service-name">Captacao presencial (meio)</div><div class="service-value">R$ 8.000 – R$ 12.000</div><div class="service-note">Showroom/obra/evento</div></div>
+        <div class="service-row"><div class="service-name">Captacao presencial (diaria)</div><div class="service-value">R$ 12.000 – R$ 20.000</div><div class="service-note">Agenda exclusiva</div></div>
+        <div class="service-row"><div class="service-name">Masterclass</div><div class="service-value">R$ 18.000 – R$ 28.000</div><div class="service-note">Participacao + ativacao digital</div></div>
+        <div class="service-row"><div class="service-name">Blockbuster</div><div class="service-value">R$ 28.000 – R$ 45.000</div><div class="service-note">Formato especial semestral</div></div>
       </div>
 
       <ul class="dash-list" style="margin-top:16px;">
@@ -1234,12 +1321,12 @@
     </section>
     <div class="gold-divider"></div>
 
-    <section class="animate-on-scroll">
+    <section class="animate-on-scroll" id="s10">
       <p class="section-tag">10 — Governanca e Performance</p>
       <h2>Transparencia, Protecao e Resultado</h2>
       <div class="govern-grid">
         <article class="card">
-          <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">5 · Governanca de Marca</h3>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">5 · Governanca de Marca</h3>
           <p>A exclusividade em pedras/marmoraria eleva o valor estrategico para a Baracho, mas exige governanca rigorosa para proteger a percepcao da base de clientes da VM + Arquitetos.</p>
           <ul class="dash-list">
             <li>Definicao contratual de territorio, prazo e escopo de exclusividade.</li>
@@ -1250,7 +1337,7 @@
         </article>
 
         <article class="card">
-          <h3 style="font-family:'Josefin Sans',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">7 · KPIs de Gestao 2026</h3>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;">7 · KPIs de Gestao 2026</h3>
           <div class="kpi-grid">
             <div class="kpi">Alcance qualificado por conteudo e por campanha.</div>
             <div class="kpi">Taxa de engajamento por visualizacao.</div>
