@@ -10,15 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0A0A0A;
-      --bg-soft: #111111;
-      --card: #181818;
-      --line: #2A2A2A;
+      --bg: #0E0E0D;
+      --bg-soft: #121211;
+      --card: #161615;
+      --line: #262624;
       --gold: #C9A84C;
       --gold-light: #E8D5A3;
       --gold-deep: #8B6914;
       --text: #E0E0E0;
-      --text-soft: #A7A79A;
+      --text-soft: #B2B2A8;
       --text-muted: #555545;
       --olive: #6C6A43;
       --bronze: #7A5933;
@@ -36,8 +36,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 10, 10, 0.94);
-      backdrop-filter: blur(8px);
+      background: rgba(14, 14, 13, 0.96);
       border-bottom: 1px solid var(--gold-deep);
     }
     .topbar-inner {
@@ -70,31 +69,29 @@
       color: var(--text-soft);
       text-decoration: none;
       font-size: 9px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      border: 1px solid var(--line);
-      padding: 5px 8px;
-      transition: color .25s ease, border-color .25s ease;
+      padding: 3px 4px;
+      transition: color .25s ease;
     }
     .jump-nav a:hover {
       color: var(--gold-light);
-      border-color: var(--gold);
     }
 
     .page { max-width: var(--max); margin: 0 auto; padding: 0 20px 100px; }
 
     .gold-divider {
-      height: 2px;
+      height: 1px;
       margin: 0 auto;
       width: 100%;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.7), transparent);
     }
 
     .section-tag {
       margin: 0 0 16px;
       color: var(--gold);
-      font-size: 8px;
-      letter-spacing: 5px;
+      font-size: 9px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
@@ -109,7 +106,7 @@
     }
 
     section {
-      padding: 132px 0;
+      padding: 136px 0;
       border-bottom: 1px solid #141414;
     }
 
@@ -121,9 +118,9 @@
       letter-spacing: -0.01em;
     }
 
-    h2 { font-size: clamp(36px, 5vw, 56px); }
-    p { margin: 0 0 16px; color: var(--text-soft); font-size: 15px; line-height: 1.7; }
-    .prose { max-width: 760px; }
+    h2 { font-size: clamp(34px, 4.8vw, 52px); }
+    p { margin: 0 0 16px; color: var(--text-soft); font-size: 15px; line-height: 1.75; }
+    .prose { max-width: 740px; }
 
     .hero {
       min-height: 100vh;
@@ -153,7 +150,7 @@
 
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(56px, 10vw, 92px);
+      font-size: clamp(52px, 9.2vw, 84px);
       line-height: 0.92;
       margin-bottom: 16px;
     }
@@ -215,11 +212,11 @@
       content: "VM";
       position: absolute;
       right: 16px;
-      bottom: -28px;
+      bottom: -18px;
       font-family: 'Playfair Display', serif;
-      font-size: 220px;
+      font-size: 180px;
       line-height: 0.8;
-      color: rgba(232, 213, 163, 0.04);
+      color: rgba(232, 213, 163, 0.025);
       pointer-events: none;
     }
 
@@ -252,13 +249,12 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      backdrop-filter: blur(6px);
+      background: #151514;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
       position: relative;
-      transition: box-shadow .3s ease, border-color .3s ease;
+      transition: border-color .25s ease;
     }
     .card::before {
       content: "";
@@ -271,7 +267,7 @@
     }
     .card:hover {
       border-left-color: var(--gold);
-      box-shadow: inset 2px 0 0 var(--gold), 0 0 0 1px rgba(201, 168, 76, 0.1);
+      box-shadow: inset 2px 0 0 var(--gold);
     }
 
     .meta-list {
@@ -420,29 +416,6 @@
     }
 
     .bar-wrap { margin-bottom: 12px; }
-    .ring-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
-    }
-    .ring {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: conic-gradient(var(--gold) 0 61.63%, #4f4f46 61.63% 86.57%, #222 86.57% 100%);
-      position: relative;
-      flex: 0 0 auto;
-    }
-    .ring::after {
-      content: "";
-      position: absolute;
-      inset: 10px;
-      border-radius: 50%;
-      background: #111;
-      border: 1px solid #2b2b2b;
-    }
     .bar-label {
       font-size: 10px;
       letter-spacing: 2px;
@@ -751,7 +724,7 @@
     }
     .pricing-card {
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      background: #141413;
       padding: 22px;
       position: relative;
     }
@@ -889,16 +862,6 @@
       line-height: 1.4;
       margin-bottom: 18px;
     }
-    .visual-break {
-      height: 180px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(80% 120% at 10% 20%, rgba(201, 168, 76, 0.16), transparent 60%),
-        radial-gradient(80% 120% at 90% 80%, rgba(201, 168, 76, 0.12), transparent 60%),
-        #101010;
-      background-attachment: fixed;
-      margin: 24px 0;
-    }
 
     .finale-note {
       font-size: 9px;
@@ -953,7 +916,7 @@
         gap: 4px;
       }
 
-      section { padding: 100px 0; }
+      section { padding: 110px 0; }
     }
 
     @media (max-width: 480px) {
@@ -1056,8 +1019,6 @@
       <p class="quote-wide">A comunicacao convence, mas o exemplo arrasta. Viviane lidera pelo exemplo e toda uma rede profissional orbita ao seu redor.</p>
     </section>
     <div class="gold-divider"></div>
-    <div class="visual-break animate-on-scroll" aria-hidden="true"></div>
-
     <section class="animate-on-scroll" id="s03">
       <p class="section-tag">03 — Presenca Digital · Dados Objetivos</p>
       <h2>Numeros que Validam Autoridade</h2>
@@ -1095,10 +1056,6 @@
       <div class="audiencia-grid">
         <article class="card">
           <h3 class="mini-title">Distribuicao por Genero</h3>
-          <div class="ring-row">
-            <div class="ring" aria-hidden="true"></div>
-            <p style="margin:0;font-size:12px;color:var(--text-soft);">Componente visual de distribuicao para leitura rapida do perfil de genero.</p>
-          </div>
           <div class="bar-wrap">
             <div class="bar-label">61,63% · Feminino</div>
             <div class="bar-track"><div class="bar-fill" style="width:61.63%"></div></div>
