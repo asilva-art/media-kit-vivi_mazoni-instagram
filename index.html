@@ -42,6 +42,32 @@
     .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
     .meta div { border: 1px solid var(--line); padding: 10px 12px; background: #fffcf7; }
     .meta b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px; }
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 9px 14px;
+      font-size: 13px;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      transition: background-color .2s ease, border-color .2s ease;
+    }
+    .btn:hover {
+      background: #f7efe6;
+      border-color: #ccb5a1;
+    }
 
     .section { padding: 26px 44px; border-bottom: 1px solid var(--line); }
     h2 { margin: 0 0 14px; font-size: 23px; letter-spacing: -0.01em; }
@@ -117,6 +143,9 @@
           <div><b>Data</b>04 de março de 2026</div>
           <div><b>Escopo</b>Parceria anual 2026</div>
           <div><b>Modelo</b>Retainer + entregas avulsas</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="./requisicao-tecnica-baracho-2026.pdf" target="_blank" rel="noopener noreferrer">Ver Requisição Técnica Baracho</a>
         </div>
       </header>
 
