@@ -556,89 +556,123 @@
 
     .hub-diagram {
       position: relative;
-      height: 520px;
+      height: 560px;
       border: 1px solid var(--line);
-      background: radial-gradient(circle at center, rgba(201, 168, 76, 0.08) 0, rgba(201, 168, 76, 0) 55%), var(--bg-soft);
+      background: radial-gradient(circle at center, rgba(198, 168, 90, 0.10) 0, rgba(198, 168, 90, 0) 55%), var(--bg-soft);
       overflow: hidden;
     }
 
-    .hub-center,
-    .satellite {
+    .hub-node {
       position: absolute;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 10px;
+      padding: 14px;
+      background: #111;
+      border: 1px solid rgba(198, 168, 90, 0.55);
+      color: var(--text);
+      line-height: 1.35;
+      opacity: 0;
+      transform: translateY(18px) scale(0.96);
+      z-index: 3;
     }
-
-    .hub-center {
-      width: 190px;
-      height: 190px;
+    .hub-node strong {
+      color: var(--gold-light);
+      font-weight: 600;
+      letter-spacing: .6px;
+    }
+    .hub-node.center {
+      width: 230px;
+      height: 230px;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      background: var(--gold-deep);
-      border: 2px solid var(--gold);
-      color: #fff;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      background: #C6A85A;
+      border: 2px solid #E2C983;
+      color: #111;
+      opacity: 1;
       z-index: 5;
+      padding: 20px;
     }
-
-    .orbit {
-      position: absolute;
+    .hub-node.center strong { color: #111; }
+    .hub-node.top {
+      width: 200px;
+      height: 200px;
       left: 50%;
-      top: 50%;
-      width: 0;
-      height: 0;
-      transform-origin: center center;
-    }
-
-    .satellite {
-      width: 150px;
-      height: 150px;
-      left: -75px;
-      top: -75px;
-      background: #151515;
-      border: 1px solid var(--line);
-      color: var(--text);
+      top: 52px;
+      transform: translateX(-50%);
       font-size: 12px;
-      line-height: 1.4;
-      opacity: 0;
-      transform: translateY(18px) scale(0.96);
     }
-    .satellite-label {
-      display: block;
-      transform: rotate(var(--rot, 0deg));
-    }
-
-    .satellite.gold { border-color: var(--gold); }
-    .satellite.olive { border-color: var(--olive); }
-    .satellite.bronze { border-color: var(--bronze); }
-    .satellite.wine { border-color: var(--wine); }
-    .satellite.light { border-color: #7A7A68; }
-
-    .orbit-line {
-      position: absolute;
-      left: 50%;
+    .hub-node.left {
+      width: 190px;
+      height: 190px;
+      left: 70px;
       top: 50%;
-      width: 180px;
-      border-top: 1px dashed rgba(201, 168, 76, 0.3);
-      transform-origin: left center;
-      z-index: 1;
+      transform: translateY(-50%);
+      font-size: 12px;
+    }
+    .hub-node.right {
+      width: 190px;
+      height: 190px;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+    }
+    .hub-node.bottom {
+      width: 200px;
+      height: 200px;
+      left: 50%;
+      bottom: 52px;
+      transform: translateX(-50%);
+      font-size: 12px;
     }
 
-    .hub-diagram.visible .satellite {
+    .hub-link {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.38;
+      border-top: 1px dashed rgba(198, 168, 90, 0.58);
+    }
+    .hub-link.v {
+      width: 0;
+      border-top: 0;
+      border-left: 1px dashed rgba(198, 168, 90, 0.58);
+    }
+    .hub-link.top {
+      left: 50%;
+      top: 250px;
+      height: 64px;
+      transform: translateX(-50%);
+    }
+    .hub-link.bottom {
+      left: 50%;
+      bottom: 250px;
+      height: 64px;
+      transform: translateX(-50%);
+    }
+    .hub-link.left {
+      left: 260px;
+      top: 50%;
+      width: 158px;
+      transform: translateY(-50%);
+    }
+    .hub-link.right {
+      right: 260px;
+      top: 50%;
+      width: 158px;
+      transform: translateY(-50%);
+    }
+
+    .hub-diagram.visible .hub-node:not(.center) {
       animation: satIn .6s ease forwards;
     }
-    .hub-diagram.visible .s1 { animation-delay: .1s; }
-    .hub-diagram.visible .s2 { animation-delay: .2s; }
-    .hub-diagram.visible .s3 { animation-delay: .3s; }
-    .hub-diagram.visible .s4 { animation-delay: .4s; }
-    .hub-diagram.visible .s5 { animation-delay: .5s; }
+    .hub-diagram.visible .top { animation-delay: .1s; }
+    .hub-diagram.visible .left { animation-delay: .2s; }
+    .hub-diagram.visible .right { animation-delay: .3s; }
+    .hub-diagram.visible .bottom { animation-delay: .4s; }
 
     @keyframes satIn {
       to {
@@ -668,7 +702,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--gold);
+      background: #C6A85A;
       margin-top: 6px;
     }
 
@@ -1258,57 +1292,59 @@
 
     <section class="animate-on-scroll" id="s05">
       <p class="section-tag">05 — Hub de Influência de Mercado</p>
-      <h2>Por que Viviane é um Hub de Influência</h2>
-      <p class="prose">Diferentes públicos, com diferentes necessidades, encontram em Viviane Mazoni uma referência comum. Esse posicionamento é o que grandes marcas buscam em uma porta-voz: autoridade, confiança e alcance em múltiplas camadas.</p>
+      <h2>Viviane Mazoni como Hub de Influência no Ecossistema da Arquitetura e do Morar</h2>
+      <p class="prose">Diferentes públicos, com diferentes necessidades, encontram em Viviane Mazoni uma referência comum dentro do universo da arquitetura e interiores. À frente da VM + Arquitetos, escritório que reúne uma equipe multidisciplinar formada por arquitetos, designers de interiores, engenheiros e especialistas em projeto e execução, Viviane atua diariamente na criação e entrega de projetos completos para o mercado de alto padrão. Esse posicionamento conecta clientes finais, especificadores, profissionais do setor e marcas do segmento premium, criando um ponto de convergência raro no mercado. É exatamente esse tipo de presença que grandes marcas buscam em uma porta-voz: autoridade técnica, confiança transferida e capacidade de dialogar com múltiplas camadas do mercado.</p>
 
       <div class="hub-wrap">
         <div class="hub-diagram animate-on-scroll" id="hub-diagram">
-          <div class="hub-center">Viviane Mazoni</div>
+          <div class="hub-link v top"></div>
+          <div class="hub-link v bottom"></div>
+          <div class="hub-link left"></div>
+          <div class="hub-link right"></div>
 
-          <div class="orbit-line" style="transform: rotate(-90deg) translateX(0);"></div>
-          <div class="orbit-line" style="transform: rotate(-162deg) translateX(0);"></div>
-          <div class="orbit-line" style="transform: rotate(162deg) translateX(0);"></div>
-          <div class="orbit-line" style="transform: rotate(18deg) translateX(0);"></div>
-          <div class="orbit-line" style="transform: rotate(90deg) translateX(0);"></div>
-
-          <div class="orbit" style="transform: translate(-50%, -50%) rotate(-90deg) translateX(180px);">
-            <div class="satellite gold s1"><span class="satellite-label" style="--rot: 90deg;">Arquitetura · VM + Arquitetos</span></div>
+          <div class="hub-node center">
+            <div>
+              <strong>VIVIANE MAZONI</strong><br/>
+              VM + Arquitetos<br/>
+              Arquitetura & Interiores<br/>
+              Projetos • Especificação • Execução
+            </div>
           </div>
-          <div class="orbit" style="transform: translate(-50%, -50%) rotate(-162deg) translateX(180px);">
-            <div class="satellite light s2"><span class="satellite-label" style="--rot: 162deg;">Audiência Digital · 73K+</span></div>
+          <div class="hub-node top">
+            <div><strong>ESPECIFICADORES</strong><br/>Arquitetos<br/>Designers<br/>Escritórios</div>
           </div>
-          <div class="orbit" style="transform: translate(-50%, -50%) rotate(162deg) translateX(180px);">
-            <div class="satellite olive s3"><span class="satellite-label" style="--rot: -162deg;">Clientes Finais</span></div>
+          <div class="hub-node left">
+            <div><strong>CLIENTES FINAIS</strong><br/>Residencial alto padrão<br/>Projetos personalizados<br/>Relacionamento direto</div>
           </div>
-          <div class="orbit" style="transform: translate(-50%, -50%) rotate(18deg) translateX(180px);">
-            <div class="satellite bronze s4"><span class="satellite-label" style="--rot: -18deg;">Profissionais do Setor</span></div>
+          <div class="hub-node right">
+            <div><strong>MARCAS & PARCEIROS</strong><br/>Materiais<br/>Fornecedores<br/>Indústria do setor</div>
           </div>
-          <div class="orbit" style="transform: translate(-50%, -50%) rotate(90deg) translateX(180px);">
-            <div class="satellite wine s5"><span class="satellite-label" style="--rot: -90deg;">Marcas & Parceiros</span></div>
+          <div class="hub-node bottom">
+            <div><strong>AUDIÊNCIA DIGITAL</strong><br/>73K+ seguidores<br/>Conteúdo profissional<br/>Projetos reais</div>
           </div>
         </div>
 
         <div class="hub-mobile">
-          <div class="hub-mobile-item"><span class="dot"></span><span>Arquitetura · VM + Arquitetos</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span>Audiência Digital · 73K+</span></div>
+          <div class="hub-mobile-item"><span class="dot"></span><span><strong>VIVIANE MAZONI</strong> · VM + Arquitetos · Arquitetura & Interiores · Projetos • Especificação • Execução</span></div>
+          <div class="hub-mobile-item"><span class="dot"></span><span><strong>ESPECIFICADORES</strong> · Arquitetos · Designers · Escritórios</span></div>
           <div class="hub-mobile-item"><span class="dot"></span><span>Clientes Finais</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span>Profissionais do Setor</span></div>
           <div class="hub-mobile-item"><span class="dot"></span><span>Marcas & Parceiros</span></div>
+          <div class="hub-mobile-item"><span class="dot"></span><span>Audiência Digital — 73K+</span></div>
         </div>
       </div>
 
       <div class="influencia-grid">
         <article class="inf-card gold-left">
           <h4>Influência Direta</h4>
-          73K+ seguidores · clientes ativos · projetos reais entregues.
+          73K+ seguidores que acompanham projetos reais, decisões de materiais, bastidores de obra e o cotidiano da criação de projetos de arquitetura e interiores. Uma audiência construída a partir da experiência prática de projetos executados e do relacionamento direto com clientes.
         </article>
         <article class="inf-card olive-left">
           <h4>Influência Profissional</h4>
-          100+ escritórios ativos · 1.000+ profissionais impactados · presença nacional.
+          Rede formada por mais de 100 escritórios ativos e mais de 1.000 profissionais impactados, entre arquitetos, designers, fornecedores e especialistas do setor. Uma comunidade profissional que acompanha suas referências, escolhas e posicionamentos dentro do mercado.
         </article>
         <article class="inf-card wine-left">
           <h4>Influência Institucional</h4>
-          Parcerias estratégicas · porta-voz de marcas · validadora de credibilidade.
+          Viviane atua como ponte entre marcas, profissionais e clientes finais, contribuindo para validar materiais, soluções e experiências dentro do universo da arquitetura e interiores. Sua participação em projetos e conteúdos funciona como sinalização de confiança, critério técnico e experiência prática para o mercado.
         </article>
       </div>
     </section>
