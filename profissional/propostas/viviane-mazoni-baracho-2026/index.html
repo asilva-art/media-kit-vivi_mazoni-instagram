@@ -555,28 +555,62 @@
     }
 
     .hub-diagram {
+      --hub-center: 236px;
+      --hub-node: 194px;
+      --hub-gap: 44px;
       position: relative;
-      height: 690px;
+      min-height: 760px;
       border: 1px solid var(--line);
-      background: radial-gradient(circle at center, rgba(198, 168, 90, 0.10) 0, rgba(198, 168, 90, 0) 55%), var(--bg-soft);
+      background: radial-gradient(circle at center, rgba(198, 168, 90, 0.11) 0, rgba(198, 168, 90, 0) 58%), var(--bg-soft);
+      display: grid;
+      grid-template-columns: var(--hub-node) var(--hub-gap) var(--hub-center) var(--hub-gap) var(--hub-node);
+      grid-template-rows: var(--hub-node) var(--hub-gap) var(--hub-center) var(--hub-gap) var(--hub-node);
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+      align-items: center;
       overflow: hidden;
+    }
+    .hub-diagram::before,
+    .hub-diagram::after {
+      content: "";
+      position: absolute;
+      opacity: 0.2;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hub-diagram::before {
+      width: calc((var(--hub-gap) * 2) + var(--hub-center));
+      border-top: 1px dashed rgba(198, 168, 90, 0.62);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hub-diagram::after {
+      height: calc((var(--hub-gap) * 2) + var(--hub-center));
+      border-left: 1px dashed rgba(198, 168, 90, 0.62);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .hub-node {
-      position: absolute;
+      width: var(--hub-node);
+      height: var(--hub-node);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 14px;
-      background: #111;
+      padding: 18px;
+      background: #101010;
       border: 1px solid rgba(198, 168, 90, 0.55);
       color: var(--text);
       line-height: 1.35;
-      opacity: 0;
-      transform: translateY(18px) scale(0.96);
       z-index: 3;
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(14px) scale(0.97);
     }
     .hub-node strong {
       color: var(--gold-light);
@@ -584,90 +618,40 @@
       letter-spacing: .6px;
     }
     .hub-node.center {
-      width: 230px;
-      height: 230px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      width: var(--hub-center);
+      height: var(--hub-center);
+      grid-row: 3;
+      grid-column: 3;
       background: #C6A85A;
       border: 2px solid #E2C983;
       color: #111;
-      opacity: 1;
       z-index: 5;
-      padding: 20px;
+      padding: 22px;
+      opacity: 1;
+      transform: none;
+      font-size: 16px;
+      line-height: 1.3;
     }
     .hub-node.center strong { color: #111; }
     .hub-node.top {
-      width: 180px;
-      height: 180px;
-      left: 50%;
-      top: 48px;
-      transform: translateX(-50%);
-      font-size: 12px;
+      grid-row: 1;
+      grid-column: 3;
     }
     .hub-node.left {
-      width: 180px;
-      height: 180px;
-      left: 72px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
+      grid-row: 3;
+      grid-column: 1;
     }
     .hub-node.right {
-      width: 180px;
-      height: 180px;
-      right: 72px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
+      grid-row: 3;
+      grid-column: 5;
     }
     .hub-node.bottom {
-      width: 180px;
-      height: 180px;
-      left: 50%;
-      bottom: 48px;
-      transform: translateX(-50%);
-      font-size: 12px;
-    }
-
-    .hub-link {
-      position: absolute;
-      z-index: 1;
-      opacity: 0.38;
-      border-top: 1px dashed rgba(198, 168, 90, 0.58);
-    }
-    .hub-link.v {
-      width: 0;
-      border-top: 0;
-      border-left: 1px dashed rgba(198, 168, 90, 0.58);
-    }
-    .hub-link.top {
-      left: 50%;
-      top: 228px;
-      height: 92px;
-      transform: translateX(-50%);
-    }
-    .hub-link.bottom {
-      left: 50%;
-      bottom: 228px;
-      height: 92px;
-      transform: translateX(-50%);
-    }
-    .hub-link.left {
-      left: 252px;
-      top: 50%;
-      width: 166px;
-      transform: translateY(-50%);
-    }
-    .hub-link.right {
-      right: 252px;
-      top: 50%;
-      width: 166px;
-      transform: translateY(-50%);
+      grid-row: 5;
+      grid-column: 3;
     }
 
     .hub-diagram.visible .hub-node:not(.center) {
-      animation: satIn .6s ease forwards;
+      animation: satIn .55s ease forwards;
     }
     .hub-diagram.visible .top { animation-delay: .1s; }
     .hub-diagram.visible .left { animation-delay: .2s; }
@@ -681,30 +665,6 @@
       }
     }
 
-    .hub-mobile {
-      display: none;
-      border: 1px solid var(--line);
-      background: var(--bg-soft);
-      padding: 16px;
-    }
-    .hub-mobile-item {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      gap: 10px;
-      align-items: start;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--text-soft);
-      font-size: 12px;
-    }
-    .hub-mobile-item:last-child { border-bottom: 0; }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #C6A85A;
-      margin-top: 6px;
-    }
     .hub-intro { max-width: none; }
 
     .influencia-grid {
@@ -1069,8 +1029,35 @@
       }
       .response { grid-template-columns: 1fr; }
       .meta-row { grid-template-columns: 1fr; gap: 6px; }
-      .hub-diagram { display: none; }
-      .hub-mobile { display: block; }
+      .hub-diagram {
+        min-height: auto;
+        padding: 24px 16px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        gap: 14px;
+      }
+      .hub-diagram::before,
+      .hub-diagram::after {
+        display: none;
+      }
+      .hub-node,
+      .hub-node.center {
+        width: min(100%, 330px);
+        height: auto;
+        min-height: 112px;
+        border-radius: 4px;
+        padding: 16px;
+        font-size: 12px;
+      }
+      .hub-node.center {
+        font-size: 13px;
+        min-height: 128px;
+      }
+      .hub-node.top { grid-row: 1; grid-column: 1; }
+      .hub-node.left { grid-row: 2; grid-column: 1; }
+      .hub-node.center { grid-row: 3; grid-column: 1; }
+      .hub-node.right { grid-row: 4; grid-column: 1; }
+      .hub-node.bottom { grid-row: 5; grid-column: 1; }
       .hub-intro { max-width: none; }
       .jump-nav { display: none; }
       .service-row {
@@ -1299,11 +1286,6 @@
 
       <div class="hub-wrap">
         <div class="hub-diagram animate-on-scroll" id="hub-diagram">
-          <div class="hub-link v top"></div>
-          <div class="hub-link v bottom"></div>
-          <div class="hub-link left"></div>
-          <div class="hub-link right"></div>
-
           <div class="hub-node center">
             <div>
               <strong>VIVIANE MAZONI</strong><br/>
@@ -1324,14 +1306,6 @@
           <div class="hub-node bottom">
             <div><strong>AUDIÊNCIA DIGITAL</strong><br/>73K+ seguidores<br/>Conteúdo profissional<br/>Projetos reais</div>
           </div>
-        </div>
-
-        <div class="hub-mobile">
-          <div class="hub-mobile-item"><span class="dot"></span><span><strong>VIVIANE MAZONI</strong> · VM + Arquitetos · Arquitetura & Interiores · Projetos • Especificação • Execução</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span><strong>ESPECIFICADORES</strong> · Arquitetos · Designers · Escritórios</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span>Clientes Finais</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span>Marcas & Parceiros</span></div>
-          <div class="hub-mobile-item"><span class="dot"></span><span>Audiência Digital — 73K+</span></div>
         </div>
       </div>
 
