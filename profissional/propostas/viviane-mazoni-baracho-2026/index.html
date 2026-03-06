@@ -223,16 +223,16 @@
       color: var(--text);
     }
 
-    .hero-right::before {
-      content: "VM";
+    .hero-brand-mark {
       position: absolute;
-      right: 16px;
-      bottom: -18px;
-      font-family: 'Playfair Display', serif;
-      font-size: 180px;
-      line-height: 0.8;
-      color: rgba(232, 213, 163, 0.025);
+      right: 18px;
+      bottom: 14px;
+      width: 210px;
+      max-width: 58%;
+      opacity: 0.08;
       pointer-events: none;
+      user-select: none;
+      filter: saturate(0.95);
     }
 
     .metric {
@@ -1008,6 +1008,11 @@
 
       .hero { min-height: auto; padding-top: 40px; }
       .hero-left, .hero-right { padding: 24px; }
+      .hero-brand-mark {
+        width: 140px;
+        right: 14px;
+        bottom: 12px;
+      }
       .response { grid-template-columns: 1fr; }
       .meta-row { grid-template-columns: 1fr; gap: 6px; }
       .hub-diagram { display: none; }
@@ -1082,6 +1087,7 @@
           <div class="metric-label">Views Médias por Post</div>
           <div class="metric-note">Pico: 124.562 views em publicação única</div>
         </div>
+        <img class="hero-brand-mark" src="/assets/logo-vm.png" alt="" aria-hidden="true" />
       </aside>
     </section>
     <div class="gold-divider"></div>
