@@ -49,6 +49,21 @@
     }
     .brand { color: var(--gold); }
     .kit { color: var(--text-muted); }
+    .jump-nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .jump-nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 4px;
+      transition: color .25s ease;
+    }
+    .jump-nav a:hover { color: var(--gold-light); }
 
     main {
       max-width: var(--max);
@@ -154,6 +169,7 @@
     @media (max-width: 768px) {
       main { padding: 32px 14px 84px; }
       p { font-size: 15px; }
+      .jump-nav { display: none; }
     }
   </style>
 </head>
@@ -161,6 +177,16 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">VM + Arquitetos</div>
+      <nav class="jump-nav" aria-label="Navegação por seções">
+        <a href="#s1">01</a>
+        <a href="#s2">02</a>
+        <a href="#s3">03</a>
+        <a href="#s4">04</a>
+        <a href="#s5">05</a>
+        <a href="#s6">06</a>
+        <a href="#s7">07</a>
+        <a href="#s8">08</a>
+      </nav>
       <div class="kit">Proposta Comercial 2026</div>
     </div>
   </header>
@@ -170,14 +196,14 @@
     <p class="page-sub">Viviane Mazoni × Baracho Pedras<br/>Parceria Estratégica 2026</p>
     <div class="gold-divider"></div>
 
-    <section>
+    <section id="s1">
       <p class="section-tag">Seção 1 · Apresentação</p>
       <p>Esta proposta apresenta o modelo de parceria entre Viviane Mazoni e Baracho Pedras para o ciclo de 2026.</p>
       <p>A proposta foi estruturada para atender aos entregáveis descritos na requisição técnica apresentada pela Baracho, organizando as atividades em um modelo de pacote mensal único, com regras claras de disponibilidade, escopo e eventuais demandas adicionais.</p>
       <p>O objetivo é formalizar uma parceria que já existe de forma natural na prática dos projetos e transformá-la em uma colaboração estruturada, consistente e de longo prazo.</p>
     </section>
 
-    <section>
+    <section id="s2">
       <p class="section-tag">Seção 2 · Objetivo da Parceria</p>
       <p>A parceria entre Viviane Mazoni e Baracho Pedras tem como objetivo conectar três dimensões complementares:</p>
       <div class="card">
@@ -187,7 +213,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s3">
       <p class="section-tag">Seção 3 · Estrutura de Dedicação</p>
       <p>A execução das entregas previstas envolve dois tipos de dedicação de tempo.</p>
       <div class="card">
@@ -196,7 +222,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s4">
       <p class="section-tag">Seção 4 · Modelo da Parceria</p>
       <div class="card">
         <div class="kicker">Valor do pacote mensal</div>
@@ -214,7 +240,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s5">
       <p class="section-tag">Seção 5 · Limites de Disponibilidade por Entrega</p>
       <div class="card">
         <ul class="list">
@@ -230,18 +256,18 @@
       </div>
     </section>
 
-    <section>
+    <section id="s6">
       <p class="section-tag">Seção 6 · Condições Adicionais</p>
       <p>O pacote mensal cobre exclusivamente as entregas previstas na requisição técnica apresentada pela Baracho.</p>
       <p>Situações fora desse escopo poderão ser tratadas como adicionais.</p>
     </section>
 
-    <section>
+    <section id="s7">
       <p class="section-tag">Seção 7 · Considerações Finais</p>
       <p>O objetivo desta proposta é transformar uma relação já existente de forma orgânica em uma parceria estruturada e consistente ao longo de 2026.</p>
     </section>
 
-    <section>
+    <section id="s8">
       <p class="section-tag">Seção 8 · Encerramento</p>
       <p>Atenciosamente</p>
       <p>Equipe VM + Arquitetos<br/>Viviane Mazoni</p>
