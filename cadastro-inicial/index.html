@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VM + Arquitetos | Cadastro Inicial</title>
+    <meta
+      name="description"
+      content="Cadastro inicial de clientes VM + Arquitetos. Processo seguro, elegante e pensado para uma jornada de alto padrão."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a" aria-hidden="true"></div>
+    <div class="bg-shape shape-b" aria-hidden="true"></div>
+
+    <main class="layout">
+      <section class="intro card reveal">
+        <p class="eyebrow">VM + Arquitetos</p>
+        <h1>Cadastro Inicial de Clientes</h1>
+        <p class="lead">
+          Desenvolvemos este formulário para iniciar a jornada do seu projeto com organização,
+          clareza e atenção aos detalhes.
+        </p>
+
+        <div class="info-block">
+          <h2>O que você pode esperar</h2>
+          <ul>
+            <li>Atendimento com acompanhamento próximo e rigor técnico.</li>
+            <li>Coleta estruturada para agilizar contrato e briefing inicial.</li>
+            <li>Proteção e tratamento responsável dos seus dados (LGPD).</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="muted">
+          Este ambiente foi planejado para uso externo. Você pode preencher de qualquer local e
+          dispositivo.
+        </p>
+      </section>
+
+      <section class="form-area card reveal delay-1">
+        <div class="stepbar" aria-hidden="true">
+          <div class="step is-active" data-marker="1">1. Percepção</div>
+          <div class="step" data-marker="2">2. Origem</div>
+          <div class="step" data-marker="3">3. Dados</div>
+          <div class="step" data-marker="4">4. Endereços</div>
+        </div>
+
+        <form id="leadForm" novalidate>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" />
+          </div>
+
+          <section class="panel is-active" data-step="1">
+            <h2>Qual característica mais influenciou sua decisão?</h2>
+            <p class="support">
+              Sua resposta orienta nosso time sobre os pontos de maior valor para você desde o
+              primeiro contato.
+            </p>
+
+            <div class="radio-grid" role="radiogroup" aria-label="Característica principal">
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Pós-venda" required />
+                <span>Pós-venda</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Inovação" />
+                <span>Inovação</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Qualidade" />
+                <span>Qualidade</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Sofisticação" />
+                <span>Sofisticação</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Relacionamento" />
+                <span>Relacionamento</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Criatividade" />
+                <span>Criatividade</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value="Assiduidade" />
+                <span>Assiduidade</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="characteristic" value='Competitividade "Preço"' />
+                <span>Competitividade "Preço"</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="panel" data-step="2">
+            <h2>Como nos conheceu?</h2>
+            <p class="support">
+              Essa informação ajuda a melhorar nossa comunicação e fortalecer os canais de maior
+              relevância.
+            </p>
+
+            <div class="radio-grid radio-grid-2" role="radiogroup" aria-label="Origem do contato">
+              <label class="radio-card">
+                <input type="radio" name="referral_source" value="Google" required />
+                <span>Google</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="referral_source" value="Instagram" />
+                <span>Instagram</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="referral_source" value="Facebook" />
+                <span>Facebook</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="referral_source" value="Amigos" />
+                <span>Amigos</span>
+              </label>
+              <label class="radio-card full-row">
+                <input type="radio" name="referral_source" value="Outro" />
+                <span>Outro</span>
+              </label>
+            </div>
+
+            <div class="field" id="referralOtherField" hidden>
+              <label for="referral_source_other">Se desejar, detalhe como chegou até nós</label>
+              <input
+                id="referral_source_other"
+                name="referral_source_other"
+                type="text"
+                maxlength="120"
+                placeholder="Ex.: indicação da arquiteta X"
+              />
+            </div>
+          </section>
+
+          <section class="panel" data-step="3">
+            <h2>Dados iniciais do cliente</h2>
+            <p class="support">
+              Essas informações serão utilizadas para formalização contratual e comunicação do
+              projeto.
+            </p>
+
+            <div class="fields two-cols">
+              <div class="field full-row">
+                <label for="full_name">Nome completo (responsável contratual)</label>
+                <input id="full_name" name="full_name" type="text" required maxlength="140" />
+              </div>
+
+              <div class="field">
+                <label for="cpf">CPF</label>
+                <input
+                  id="cpf"
+                  name="cpf"
+                  type="text"
+                  inputmode="numeric"
+                  required
+                  placeholder="000.000.000-00"
+                />
+              </div>
+
+              <div class="field">
+                <label for="birthday_ddmm">Aniversário (opcional)</label>
+                <input
+                  id="birthday_ddmm"
+                  name="birthday_ddmm"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="dd/mm"
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone_primary">Celular principal</label>
+                <input
+                  id="phone_primary"
+                  name="phone_primary"
+                  type="text"
+                  inputmode="tel"
+                  required
+                  placeholder="+55 (31) 99999-9999"
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone_secondary">Celular secundário (opcional)</label>
+                <input
+                  id="phone_secondary"
+                  name="phone_secondary"
+                  type="text"
+                  inputmode="tel"
+                  placeholder="+55 (31) 99999-9999"
+                />
+              </div>
+
+              <div class="field">
+                <label for="email_primary">E-mail principal</label>
+                <input id="email_primary" name="email_primary" type="email" required />
+              </div>
+
+              <div class="field">
+                <label for="email_secondary">E-mail secundário (opcional)</label>
+                <input id="email_secondary" name="email_secondary" type="email" />
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" data-step="4">
+            <h2>Endereços e observações finais</h2>
+            <p class="support">
+              Primeiro endereço: correspondência atual. Segundo endereço: local que será objeto do
+              projeto.
+            </p>
+
+            <div class="fields">
+              <div class="field">
+                <label for="address_correspondence">Endereço para correspondência</label>
+                <textarea
+                  id="address_correspondence"
+                  name="address_correspondence"
+                  rows="5"
+                  required
+                  placeholder="Rua/Avenida, número, complemento, bairro, município, CEP"
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <label for="address_project">Endereço objeto do projeto</label>
+                <textarea
+                  id="address_project"
+                  name="address_project"
+                  rows="5"
+                  required
+                  placeholder="Rua/Avenida, número, complemento, bairro, município, CEP"
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <label for="extra_info">Informações adicionais (opcional)</label>
+                <textarea
+                  id="extra_info"
+                  name="extra_info"
+                  rows="4"
+                  placeholder="Caso exista alguma informação importante, descreva aqui."
+                ></textarea>
+              </div>
+            </div>
+
+            <p class="lgpd-note">
+              Ao enviar, você concorda com o tratamento dos dados para execução contratual e
+              comunicação operacional, em conformidade com a LGPD.
+            </p>
+          </section>
+
+          <div class="actions">
+            <button type="button" class="btn btn-ghost" id="prevBtn">Voltar</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Avançar</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn" hidden>
+              Concluir cadastro
+            </button>
+          </div>
+
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <section id="successMessage" class="success" hidden>
+          <h2>Cadastro recebido com sucesso.</h2>
+          <p>
+            Obrigada por preencher. Nosso time dará continuidade ao processo com as próximas
+            orientações.
+          </p>
+          <button type="button" class="btn btn-ghost" id="newSubmissionBtn">Enviar novo cadastro</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
